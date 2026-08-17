@@ -30,7 +30,9 @@ function Navbar({ darkMode, toggleTheme }) {
             </span>
           )}
         </Link>
-
+        <Link to="/wishlist" className="wishlist-nav">
+         ❤️ Wishlist
+        </Link>
         {/* Theme Button */}
 
         <button

@@ -31,7 +31,86 @@ function Home() {
           🛍️
         </div>
       </section>
+      {/* Shop By Category */}
 
+      <section className="categories">
+
+        <div className="section-heading category-heading">
+          <div>
+            <p>EXPLORE</p>
+            <h2>Shop by Category</h2>
+          </div>
+        </div>
+
+
+        <div className="category-grid">
+
+          <Link
+            to="/products"
+            className="category-card"
+          >
+            <div className="category-icon">
+              👕
+            </div>
+
+            <h3>Fashion</h3>
+
+            <span>
+              Explore Collection →
+            </span>
+          </Link>
+
+
+          <Link
+            to="/products"
+            className="category-card"
+          >
+            <div className="category-icon">
+              💻
+            </div>
+
+            <h3>Electronics</h3>
+
+            <span>
+              Explore Collection →
+            </span>
+          </Link>
+
+
+          <Link
+            to="/products"
+            className="category-card"
+          >
+            <div className="category-icon">
+              👟
+            </div>
+
+            <h3>Footwear</h3>
+
+            <span>
+              Explore Collection →
+            </span>
+          </Link>
+
+
+          <Link
+            to="/products"
+            className="category-card"
+          >
+            <div className="category-icon">
+              🎧
+            </div>
+
+            <h3>Accessories</h3>
+
+            <span>
+              Explore Collection →
+            </span>
+          </Link>
+
+        </div>
+
+      </section>
 
       {/* Featured Products */}
 

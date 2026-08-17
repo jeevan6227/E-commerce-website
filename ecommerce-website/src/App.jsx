@@ -2,13 +2,18 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
 
 import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
+import { ToastProvider } from "./context/ToastContext";
 
 import "./App.css";
 
@@ -31,44 +36,71 @@ function App() {
   };
 
   return (
-    <CartProvider>
-      <BrowserRouter>
+    <ToastProvider>
+      <WishlistProvider>
+        <CartProvider>
 
-        <div className={darkMode ? "app dark-mode" : "app"}>
+          <BrowserRouter>
 
-          <Navbar
-            darkMode={darkMode}
-            toggleTheme={toggleTheme}
-          />
+            <div
+              className={
+                darkMode
+                  ? "app dark-mode"
+                  : "app"
+              }
+            >
 
-          <Routes>
-            <Route path="/" element={<Home />} />
+              <Navbar
+                darkMode={darkMode}
+                toggleTheme={toggleTheme}
+              />
 
-            <Route
-              path="/products"
-              element={<Products />}
-            />
+              <Routes>
 
-            <Route
-              path="/cart"
-              element={<Cart />}
-            />
+                <Route
+                  path="/"
+                  element={<Home />}
+                />
 
-            <Route
-              path="/checkout"
-              element={<Checkout />}
-            />
+                <Route
+                  path="/products"
+                  element={<Products />}
+                />
 
-            <Route
-              path="/order-success"
-              element={<OrderSuccess />}
-            />
-          </Routes>
+                <Route
+                  path="/products/:id"
+                  element={<ProductDetails />}
+                />
 
-        </div>
+                <Route
+                  path="/wishlist"
+                  element={<Wishlist />}
+                />
 
-      </BrowserRouter>
-    </CartProvider>
+                <Route
+                  path="/cart"
+                  element={<Cart />}
+                />
+
+                <Route
+                  path="/checkout"
+                  element={<Checkout />}
+                />
+
+                <Route
+                  path="/order-success"
+                  element={<OrderSuccess />}
+                />
+
+              </Routes>
+
+            </div>
+
+          </BrowserRouter>
+
+        </CartProvider>
+      </WishlistProvider>
+    </ToastProvider>
   );
 }
 
