@@ -10,6 +10,8 @@ import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import Profile from "./pages/Profile";
+import Categories from "./pages/Categories";
 
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
@@ -73,8 +75,18 @@ function App() {
                 />
 
                 <Route
+                  path="/categories"
+                  element={<Categories />}
+                />
+
+                <Route
                   path="/wishlist"
                   element={<Wishlist />}
+                />
+
+                 <Route
+                  path="/profile"
+                  element={<Profile />}
                 />
 
                 <Route

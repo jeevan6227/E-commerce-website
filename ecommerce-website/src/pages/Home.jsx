@@ -121,21 +121,112 @@ function Home() {
             <h2>Featured Products</h2>
           </div>
 
-          <button className="view-all">
-            View All →
-          </button>
+          <Link to="/products" className="view-all">
+  View All →
+</Link>
         </div>
 
         <div className="products-grid">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-            />
-          ))}
+         {products.slice(0, 6).map((product) => (
+          <ProductCard
+           key={product.id}
+           product={product}
+           />
+           ))}
+       </div>
+      </section>
+      {/* Special Offer */}
+
+      <section className="offer-section">
+
+        <div className="offer-content">
+
+          <p className="offer-small">
+            LIMITED TIME OFFER
+          </p>
+
+          <h2>
+            Upgrade Your Style.
+            <br />
+            Save More.
+          </h2>
+
+          <p className="offer-description">
+            Get amazing deals on selected products.
+            Don't miss out on our latest offers!
+          </p>
+
+          <Link
+            to="/products"
+            className="offer-button"
+          >
+            Shop Deals →
+          </Link>
+
         </div>
+
+        <div className="offer-icon">
+          🎁
+        </div>
+
       </section>
 
+      {/* Why ShopZone */}
+
+      <section className="why-shopzone">
+
+        <div className="why-heading">
+          <p>SHOP WITH CONFIDENCE</p>
+          <h2>Why ShopZone?</h2>
+        </div>
+
+        <div className="why-grid">
+
+          <div className="why-card">
+            <div className="why-icon">
+              🚚
+            </div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+              Get your favorite products delivered
+              quickly and safely.
+            </p>
+          </div>
+
+
+          <div className="why-card">
+            <div className="why-icon">
+              🔒
+            </div>
+
+            <h3>Secure Payment</h3>
+
+            <p>
+              Your payments and personal information
+              are always protected.
+            </p>
+          </div>
+
+
+          <div className="why-card">
+            <div className="why-icon">
+              ↩️
+            </div>
+
+            <h3>Easy Returns</h3>
+
+            <p>
+              Hassle-free returns whenever you're
+              not completely satisfied.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+      
     </div>
   );
 }
